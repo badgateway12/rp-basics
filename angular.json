@@ -12,7 +12,7 @@
       },
       "root": "",
       "sourceRoot": "src",
-      "prefix": "app",
+      "prefix": "rpb",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
@@ -28,8 +28,11 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles/main.scss"
             ],
+            "stylePreprocessorOptions": {
+              "includePaths": ["src/styles/main"]
+            },
             "scripts": []
           },
           "configurations": {
@@ -93,8 +96,11 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles/main.scss"
             ],
+            "stylePreprocessorOptions": {
+              "includePaths": ["src/styles/main"]
+            },
             "scripts": []
           }
         },

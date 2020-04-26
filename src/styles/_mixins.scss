@@ -1,0 +1,36 @@
+@function calculateRem($size) {
+    $remSize: $size / 14px;
+    @return $remSize * 1rem;
+}
+  
+@mixin font-size($size) {
+    font-size: $size;
+    font-size: calculateRem($size);
+}
+
+@mixin box($width, $height:$width) {
+    width: $width;
+    height: $height;
+}
+
+@mixin rounded($radius: 0.5em) {
+    -webkit-border-radius: .5em; 
+    -moz-border-radius: .5em;
+    border-radius: .5em;
+}
+
+@mixin btn-theme {
+    cursor: pointer;
+    background-color: $primary;
+    border-color: $border;
+    color: $text;
+    outline: none;
+    text-align: center;
+    text-decoration: none;
+    @include font-size(24px);
+
+    &:hover {
+        background: saturate($primary, 25%);
+        text-decoration: none;
+    }
+}

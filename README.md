@@ -1,27 +1,17 @@
-# RpBasics
+# Sorting out the basics of Reactive Programming
+Small Angular project to help understand the basic concepts of Reactive Programming makes use of [RxJS library](https://rxjs-dev.firebaseapp.com/)
+To have a bit of theoretical acknowledgement take a glance at [Presentation](https://docs.google.com/presentation/d/1AeMYemrkWjPrqAhW5ql-icj3HNxcOAHC1kWPrRkCpPo/edit#slide=id.g35ed75ccf_022)
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.26.
+### Installing
 
-## Development server
+1. install npm and angular/cli if needed
+2. clone this repo
+3. run 'npm install' then 'ng serve' 
+4. the project runs at http://localhost:4200/picture
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Code scaffolding
+## Additional resources
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+* [What does it mean to be Reactive?](https://www.youtube.com/watch?v=sTSQlYX5DU0) by Eric Meijer
+* [The introduction to Reactive Programming you've been missing](https://gist.github.com/staltz/868e7e9bc2a7b8c1f754) by André Staltz
+* [Additional bunch of observables and operators for RxJS](https://github.com/cartant/rxjs-etc)

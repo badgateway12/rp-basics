@@ -1,0 +1,17 @@
+@import "~styles/variables";
+@import "~styles/mixins";
+
+:host {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    margin: $space-unit * 20;
+
+    > * + * {
+        border-left: solid $space-unit $border;
+        margin-left: $space-unit * 10;
+        padding-left: $space-unit * 10;
+    }
+}

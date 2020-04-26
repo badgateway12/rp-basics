@@ -1,0 +1,15 @@
+@import "~styles/variables";
+@import "~styles/mixins";
+
+:host {
+  display: flex;
+  flex-wrap: wrap;
+  @include box($space-unit * 80, $space-unit * 10);
+
+  button {
+    @include btn-theme;
+    flex-basis: 0;
+    flex-grow: 1;
+    max-width: 100%;
+  }
+}

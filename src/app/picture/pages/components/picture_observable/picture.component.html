@@ -1,0 +1,6 @@
+<h1>Observables</h1>
+<img [attr.src]="picture$ | async" alt=""/>
+<div class="horizontal-container">
+    <rpb-button [label]="'Load Picture'" (clicked)="requestPicture()"></rpb-button>
+</div>
+

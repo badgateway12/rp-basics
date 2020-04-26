@@ -1,0 +1,29 @@
+@import "~styles/variables";
+@import "~styles/mixins";
+
+:host {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    img {
+        position: relative;
+        border: $space-unit $border;
+        width: $space-unit * 100;
+        height: $space-unit * 100;
+    }
+
+    .horizontal-container {
+        display: inline-flex;
+        margin-top: $space-unit * 10;
+
+        rpb-button {
+            max-width: $space-unit * 50;
+        }
+
+        rpb-button + rpb-button {
+            margin-left: $space-unit * 5;
+        }
+    }
+}
