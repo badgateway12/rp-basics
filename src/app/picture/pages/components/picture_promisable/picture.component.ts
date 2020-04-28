@@ -9,6 +9,9 @@ import { PromisablePictureService } from '../../shared/picture.promisable.servic
   providers: [PromisablePictureService],
 })
 export class PicturePromisableComponent {
+  // we want to call requestPicture only once
+  private requestDone = false;
+
   constructor(private pictureService: PromisablePictureService) {}
 
   get picture(): SafeUrl {
@@ -16,6 +19,8 @@ export class PicturePromisableComponent {
   }
 
   requestPicture() {
+    if (this.requestDone) { return; }
     this.pictureService.requestPicture();
+    this.requestDone = true;
   }
 }

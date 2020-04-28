@@ -1,7 +1,7 @@
-import { Component, ChangeDetectionStrategy } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Component, ChangeDetectionStrategy, OnInit } from '@angular/core';
+import { Observable, Subject } from 'rxjs';
 import { ObservablePictureService } from '../../shared/picture.observable.service';
-import { SafeUrl } from '@angular/platform-browser';
+import { first, map } from 'rxjs/operators';
 
 @Component({
   selector: 'rpb-picture-observable',
@@ -10,14 +10,29 @@ import { SafeUrl } from '@angular/platform-browser';
   providers: [ObservablePictureService],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class PictureObservableComponent {
-  constructor(private pictureService: ObservablePictureService) {}
+export class PictureObservableComponent implements OnInit {
+    private requestStream$ = new Subject<void>();
 
-  get picture$(): Observable<SafeUrl> {
+    constructor(private pictureService: ObservablePictureService) { }
+
+    public ngOnInit(): void {
+      this.pipeRequestStream();
+    }
+
+    public get picture$() {
       return this.pictureService.picture$;
-  }
+    }
 
-  requestPicture() {
-    this.pictureService.requestPicture();
-  }
+    public requestPicture() {
+        this.requestStream$.next();
+    }
+
+    // we want to call requestPicture only once
+    // there is no need to unsubscribe with [first]
+    private pipeRequestStream() {
+      this.requestStream$.pipe(
+        first(),
+        map(() => this.pictureService.requestPicture())
+      ).subscribe();
+    }
 }

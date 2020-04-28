@@ -1,7 +1,9 @@
 import { Injectable } from '@angular/core';
 import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
-import { MAX_RETRIES, API_ENDPOINT, DEFAULT_URL, RETRY_INTERVAL, FLOOR, CEIL } from './picture. const';
+import { MAX_RETRIES, API_ENDPOINT, RETRY_INTERVAL, FLOOR, CEIL } from './picture. const';
 import { randomInt } from '@shared/helpers';
+
+const DEFAULT_URL = '../../../../assets/images/default.jpeg';
 
 @Injectable()
 export class PromisablePictureService {
